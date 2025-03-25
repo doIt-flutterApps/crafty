@@ -11,6 +11,7 @@ import 'data/constant.dart';
 import 'firebase_options.dart';
 import 'intro/intro_page.dart';
 import 'package:crafty/view/link/link_page.dart';
+import 'package:crafty/admin/admin_page.dart';
 
 @pragma('vm:entry-point')
 Future<void> _firebaseMessagingBackgroundHandler(RemoteMessage message) async {
@@ -118,7 +119,8 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepOrange),
         useMaterial3: true,
       ),
-      home: IntroPage(),
+      // home: IntroPage(),
+      home: AdminPage(),
     );
   }
 }
