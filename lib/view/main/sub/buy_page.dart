@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:lottie/lottie.dart';
 import '../../../service/admob_service.dart';
+import '../detail/item_page.dart';
 
 class BuyPage extends StatefulWidget {
   const BuyPage({super.key});
@@ -227,7 +228,7 @@ class _BuyPage extends State<BuyPage> {
                       ),
                       onTap: () {
                         // 아이템 상세 페이지로 이동하기
-                        // Get.to(ItemPage(selectedPost: _selectedPost));
+                        Get.to(ItemPage(selectedPost: _selectedPost));
                       },
                     ),
                   ),
