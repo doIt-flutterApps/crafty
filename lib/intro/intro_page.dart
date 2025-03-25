@@ -10,6 +10,7 @@ import 'package:google_sign_in/google_sign_in.dart';
 import 'package:lottie/lottie.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import '../data/constant.dart';
+import '../view/auth/auth_page.dart';
 
 class IntroPage extends StatefulWidget {
   const IntroPage({super.key});
@@ -96,44 +97,43 @@ class _IntroPage extends State<IntroPage> {
             case ConnectionState.done:
               if (snapshot.data != null) {
                 // if (snapshot.data!) {
-                  _notiPermissionCheck().then((value) {
-                    _loginCheck().then((value) {
-                      if (value == true) {
-                        Future.delayed(const Duration(seconds: 2), () async {
-                          Get.snackbar(Constant.APP_NAME, '로그인했습니다.');
-                          CraftyUser user = Get.find();
-                          await FirebaseFirestore.instance
-                              .collection('craftyusers')
-                              .doc(user.email)
-                              .update({
-                                'loginTimeStamp': FieldValue.serverTimestamp(),
-                              });
-                          // 메인 페이지로 이동하기
-                        });
-                      } else {
-                        // 로그인 페이지로 이동하기
-                        Future.delayed(const Duration(seconds: 2), () {});
-                      }
-                    });
+                _notiPermissionCheck().then((value) {
+                  _loginCheck().then((value) {
+                    if (value == true) {
+                      Future.delayed(const Duration(seconds: 2), () async {
+                        Get.snackbar(Constant.APP_NAME, '로그인했습니다.');
+                        CraftyUser user = Get.find();
+                        await FirebaseFirestore.instance
+                            .collection('craftyusers')
+                            .doc(user.email)
+                            .update({
+                              'loginTimeStamp': FieldValue.serverTimestamp(),
+                            });
+                        // 메인 페이지로 이동하기
+                      });
+                    } else {
+                      // 로그인 페이지로 이동하기
+                      Future.delayed(const Duration(seconds: 2), () {
+                        Get.off(AuthPage());
+                      });
+                    }
                   });
-                  return Container(
-                    child: Center(
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          const Text(
-                            Constant.APP_NAME,
-                            style: TextStyle(
-                              fontSize: 50,
-                              fontFamily: 'clover',
-                            ),
-                          ),
-                          SizedBox(height: 20),
-                          Lottie.asset('res/animation/shop.json'),
-                        ],
-                      ),
+                });
+                return Container(
+                  child: Center(
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        const Text(
+                          Constant.APP_NAME,
+                          style: TextStyle(fontSize: 50, fontFamily: 'clover'),
+                        ),
+                        SizedBox(height: 20),
+                        Lottie.asset('res/animation/shop.json'),
+                      ],
                     ),
-                  );
+                  ),
+                );
                 // } else {
                 //   return const AlertDialog(
                 //     title: Text(Constant.APP_NAME),
