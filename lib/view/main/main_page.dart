@@ -5,6 +5,7 @@ import 'package:firebase_remote_config/firebase_remote_config.dart';
 import 'package:flutter/material.dart';
 import 'package:crafty/view/main/sub/buy_page.dart';
 import 'package:crafty/view/main/sub/sell_page.dart';
+import 'package:crafty/view/main/sub/event_page.dart';
 
 class MainPage extends StatefulWidget {
   const MainPage({super.key});
@@ -86,7 +87,7 @@ class _MainPage extends State<MainPage> {
       case 1:
         return const SellPage();
       case 2:
-      // return EventPage();
+        return EventPage();
     }
   }
 }
