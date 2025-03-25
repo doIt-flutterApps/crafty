@@ -10,6 +10,7 @@ import 'package:get/get.dart';
 import 'data/constant.dart';
 import 'firebase_options.dart';
 import 'intro/intro_page.dart';
+import 'package:crafty/view/link/link_page.dart';
 
 @pragma('vm:entry-point')
 Future<void> _firebaseMessagingBackgroundHandler(RemoteMessage message) async {
@@ -35,7 +36,8 @@ Future<void> setupFlutterNotifications() async {
   flutterLocalNotificationsPlugin = FlutterLocalNotificationsPlugin();
   await flutterLocalNotificationsPlugin
       .resolvePlatformSpecificImplementation<
-      AndroidFlutterLocalNotificationsPlugin>()
+        AndroidFlutterLocalNotificationsPlugin
+      >()
       ?.createNotificationChannel(channel);
   await FirebaseMessaging.instance.setForegroundNotificationPresentationOptions(
     alert: true,
@@ -80,8 +82,7 @@ void main() async {
       FirebaseCrashlytics.instance.recordError(error, stack, fatal: true);
       return true;
     };
-    await FirebaseAppCheck.instance
-        .activate(
+    await FirebaseAppCheck.instance.activate(
       androidProvider: AndroidProvider.debug,
       appleProvider: AppleProvider.debug,
     );
@@ -105,6 +106,9 @@ class MyApp extends StatelessWidget {
       });
       FirebaseMessaging.onMessage.listen(showFlutterNotification);
       FirebaseMessaging.onMessageOpenedApp.listen((RemoteMessage message) {
+        String linkId = message.data['link'];
+        Get.to(LinkPage(link: linkId));
+
         print('A new onMessageOpenedApp event was published! ${message.data}');
       });
     }

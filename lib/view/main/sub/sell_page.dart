@@ -291,7 +291,7 @@ class _SellPage extends State<SellPage> {
                               http
                                   .post(
                                     Uri.parse(
-                                      'https://us-central1-example-20efe.cloudfunctions.net/sendPostNotification',
+                                      'https://craftysendpostnotification-vk4ivw6l2q-uc.a.run.app',
                                     ),
                                     headers: <String, String>{
                                       'Content-Type':
