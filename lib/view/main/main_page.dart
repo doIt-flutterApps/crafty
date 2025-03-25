@@ -3,6 +3,7 @@ import 'package:crafty/view/main/drawer_widget.dart';
 import 'package:firebase_analytics/firebase_analytics.dart';
 import 'package:firebase_remote_config/firebase_remote_config.dart';
 import 'package:flutter/material.dart';
+import 'package:crafty/view/main/sub/buy_page.dart';
 
 class MainPage extends StatefulWidget {
   const MainPage({super.key});
@@ -80,7 +81,7 @@ class _MainPage extends State<MainPage> {
   subPage(int tapNumber) {
     switch (tapNumber) {
       case 0:
-      // return const BuyPage();
+        return const BuyPage();
       case 1:
       // return const SellPage();
       case 2:
