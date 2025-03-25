@@ -1,0 +1,106 @@
+{
+  "project_info": {
+    "project_number": "328238832215",
+    "firebase_url": "https://example-6f491-default-rtdb.firebaseio.com",
+    "project_id": "example-6f491",
+    "storage_bucket": "example-6f491.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:328238832215:android:2478134517cfdff8ade112",
+        "android_client_info": {
+          "package_name": "com.example.crafty"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBu-kw36AC_gtknAxvun16yd_RjPzdZJgA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:328238832215:android:a3a8bd8c640b77b7ade112",
+        "android_client_info": {
+          "package_name": "com.example.honeybee"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBu-kw36AC_gtknAxvun16yd_RjPzdZJgA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:328238832215:android:8c9377d95dc17f48ade112",
+        "android_client_info": {
+          "package_name": "com.example.personalitytest"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBu-kw36AC_gtknAxvun16yd_RjPzdZJgA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:328238832215:android:860aa6caef228642ade112",
+        "android_client_info": {
+          "package_name": "com.example2.classic_sound"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBu-kw36AC_gtknAxvun16yd_RjPzdZJgA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:328238832215:android:89a2538fed517a7dade112",
+        "android_client_info": {
+          "package_name": "com.example2.mybudongsan"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBu-kw36AC_gtknAxvun16yd_RjPzdZJgA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
