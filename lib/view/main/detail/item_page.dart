@@ -3,6 +3,7 @@ import 'package:crafty/data/item_data.dart';
 import 'package:crafty/data/user.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'chat_page.dart';
 
 class ItemPage extends StatefulWidget {
   final ItemData selectedPost;
@@ -77,6 +78,7 @@ class _ItemPage extends State<ItemPage> {
             ElevatedButton(
               onPressed: () async {
                 // 채팅 페이지로 이동하기
+                Get.to(ChatPage(selectedPost: widget.selectedPost));
               },
               style: ElevatedButton.styleFrom(
                 foregroundColor: Colors.white,
