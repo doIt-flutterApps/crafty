@@ -11,6 +11,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'package:sign_in_button/sign_in_button.dart';
 import '../../data/constant.dart';
 import 'email_dialog.dart';
+import 'package:crafty/view/main/main_page.dart';
 
 class AuthPage extends StatefulWidget {
   const AuthPage({super.key});
@@ -155,6 +156,7 @@ class _AuthPage extends State<AuthPage> {
                 (type == SignType.Email ? _auth.currentUser?.uid : user!.uid)!;
             Get.lazyPut(() => craftyUser);
             // 메인 페이지로 이동하기
+            Get.off(MainPage());
           });
     } on FirebaseAuthException catch (e) {
       setState(() {

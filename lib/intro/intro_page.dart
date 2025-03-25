@@ -11,6 +11,7 @@ import 'package:lottie/lottie.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import '../data/constant.dart';
 import '../view/auth/auth_page.dart';
+import 'package:crafty/view/main/main_page.dart';
 
 class IntroPage extends StatefulWidget {
   const IntroPage({super.key});
@@ -110,6 +111,7 @@ class _IntroPage extends State<IntroPage> {
                               'loginTimeStamp': FieldValue.serverTimestamp(),
                             });
                         // 메인 페이지로 이동하기
+                        Get.off(MainPage());
                       });
                     } else {
                       // 로그인 페이지로 이동하기
